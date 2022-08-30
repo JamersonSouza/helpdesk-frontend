@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="cadastro">
+        <div class="form-cadastro">
+            <div class="img-cadastro">
+                <img src="../../../../assets/abertura-chamado.jpg" width="200px" alt="">
+            </div>
+            <form>
+                <div class="section">
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-envelope"></i>
+                            <input disabled type="text" [style]="{'width': '500px'}" pTooltip="Título do Chamado" class="tituloChamado" [(ngModel)]="chamado.titulo" pInputText name="titulo"
+                               />
+                        </span>
+                    </div>
+                </div>
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <span class="p-input-icon-left">      
+                            <i class="pi pi-angle-right"></i>
+                        <select disabled pTooltip="Selecione o Status" name="status" [(ngModel)]="chamado.status"  class="mr-2" pInputText [style]="{'width': '245px'}">
+                                <option value="0" >ABERTO</option>
+                                <option value="1">EM ANDAMENTO</option>
+                                <option value="2">FECHADO</option>
+                            </select>
+                        </span>
+                          
+                            <span class="p-input-icon-left">      
+                                <i class="pi pi-angle-right"></i>
+                            <select disabled pInputText pTooltip="Selecione a Prioridade" [(ngModel)]="chamado.prioridade" name="prioridade" [style]="{'width': '245px'}">
+                                <option value="0">BAIXA</option>
+                                <option value="1">MÉDIA</option>
+                                <option value="2">ALTA</option>
+                            </select>
+                            </span>
+
+                    </div>
+                </div>
+
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <input type="text" disabled pTooltip="Nome do Técnico"  [style]="{'width': '500px'}" pInputText [(ngModel)]="chamado.nomeTecnico" name="nomeTecnico">
+                    </div>
+                </div>
+
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <input type="text" disabled pTooltip="Nome do Cliente"  [style]="{'width': '500px'}" pInputText [(ngModel)]="chamado.nomeCliente" name="nomeCliente">
+                    </div>
+                </div>
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <textarea disabled [style]="{'width': '500px'}" pTooltip="Observações para o chamado"  [(ngModel)]="chamado.observacoes" name="observacoes" pInputTextarea></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="btn">
+             
+                <button routerLink="../../" pButton pRipple label="Voltar" icon="pi pi-times" iconPos="right"
+                    class="p-button-danger mb-2"></button>
+            </div>
+        </div>
+    </div>
+</div>

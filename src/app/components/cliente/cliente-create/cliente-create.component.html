@@ -1,0 +1,70 @@
+<p-toast></p-toast>
+<div class="container-cliente">
+    <div class="cadastro">
+        <div class="form-cadastro">
+            <div class="img-cadastro">
+                <img src="../../../../assets/img-cadastro-cliente.jpg" width="200px" alt="">
+            </div>
+            <form>
+                <div class="section-group">
+,                    <div class="check-group">
+                        <p-checkbox (click)="addPerfil(0)" name="adm" value="admin" inputId="adm"></p-checkbox>
+                        <label for="adm">ADMIN</label>
+                    </div>
+    
+                    <div class="check-group">
+                        <p-checkbox (click)="addPerfil(2)" name="tec" value="cliente" inputId="tec"></p-checkbox>
+                        <label for="tec">TÉCNICO</label>
+                    </div>
+                    <div class="check-group">
+                        <p-checkbox (click)="addPerfil(1)" name="cliente" value="cliente" inputId="cliente"></p-checkbox>
+                        <label for="cliente">CLIENTE</label>
+                    </div>
+                </div>
+                <div class="form">
+                <div class="section">
+                    
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-user"></i>
+                        <input type="text" [(ngModel)]="cliente.nome" [formControl]="nome" required pInputText name="nome" required="required" placeholder="John Doe" />
+                            </span>
+                    </div>
+
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-envelope"></i>
+                        <input type="email" [formControl]="email" [(ngModel)]="cliente.email" required pInputText name="email" required="required"
+                            placeholder="john.doe@helpdesk.com" />
+                            </span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-id-card"></i>
+                        <p-inputMask name="cpf" [formControl]="cpf" [(ngModel)]="cliente.cpf" placeholder="Cpf: 001.002.003-04" mask="999.999.999-99"></p-inputMask>
+                        </span>
+                    </div>
+
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-lock"></i>
+                        <input type="password" [formControl]="senha" [(ngModel)]="cliente.senha" required pInputText name="senha" required="required"
+                            placeholder="password" />
+                            </span>
+                    </div>
+                </div>
+            </div>
+            </form>
+            
+            <div class="btn">
+                <button (click)="create()" [disabled]="!validaCampos()" pButton pRipple  icon="pi pi-check" iconPos="right" label="Cadastrar Cliente" class="p-button-success mb-2"></button>
+                <br>
+                <button routerLink="../" pButton pRipple label="Cancelar" icon="pi pi-times" iconPos="right" class="p-button-danger mb-2"></button>
+            </div>
+
+        </div>
+    </div>
+</div>

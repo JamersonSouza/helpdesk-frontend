@@ -1,0 +1,50 @@
+.container-cliente{
+     display:  flex;
+    justify-content: center;
+
+}
+.cadastro{
+    display: flex;
+    
+    justify-content: center;
+    }
+.form-cadastro{
+    align-self: center;
+    border-radius: 10px;
+    width: 700px;
+    height: 530px;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+}
+.img-cadastro, .btn{
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+  }
+.perfils{
+    display: flex;
+    width: 100%;
+  }
+  .form .section {
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .form .section .control-group {
+    margin-top: 10px;
+  }
+  
+  
+  .form .section .control-group .control-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .section-group{
+    display: flex;
+  }
+.section-group .check-group{margin: 0 auto; font-family: 'poppins';}

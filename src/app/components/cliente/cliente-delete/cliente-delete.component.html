@@ -1,0 +1,68 @@
+<p-toast></p-toast>
+<div class="container-cliente">
+    <div class="cadastro">
+        <div class="form-cadastro">
+            <div class="img-cadastro">
+                <img src="../../../../assets/img-cadastro.jpg" width="200px" alt="">
+            </div>
+            <form>
+                <div class="section-group">
+,                    <div class="check-group">
+                        <p-checkbox [disabled]="true" name="adm" value="admin" inputId="adm"></p-checkbox>
+                        <label for="adm">ADMIN</label>
+                    </div>
+    
+                    <div class="check-group">
+                        <p-checkbox [disabled]="true" name="tec" value="cliente" inputId="tec"></p-checkbox>
+                        <label for="tec">TÉCNICO</label>
+                    </div>
+                    <div class="check-group">
+                        <p-checkbox [disabled]="true" name="cliente" value="cliente" inputId="cliente"></p-checkbox>
+                        <label for="cliente">CLIENTE</label>
+                    </div>
+                </div>
+                <div class="form">
+                <div class="section">
+                    
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-user"></i>
+                        <input type="text" [disabled]="true" [(ngModel)]="cliente.nome"  pInputText name="nome" />
+                            </span>
+                    </div>
+
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-envelope"></i>
+                        <input type="email" [disabled]="true" [(ngModel)]="cliente.email" required pInputText name="email" />
+                            </span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-id-card"></i>
+                        <p-inputMask name="cpf" [disabled]="true" [(ngModel)]="cliente.cpf" placeholder="Cpf: 001.002.003-04" mask="999.999.999-99"></p-inputMask>
+                        </span>
+                    </div>
+
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-lock"></i>
+                        <input type="password"  [disabled]="true"  [(ngModel)]="cliente.senha" pInputText name="senha" />
+                            </span>
+                    </div>  
+                </div>
+            </div>
+            </form>
+            
+            <div class="btn">
+                <button (click)="delete()"  pButton pRipple  icon="pi pi-trash" iconPos="right" label="Deletar Cliente" class="p-button-danger mb-2"></button>
+                <br>
+                <button routerLink="../../" pButton pRipple label="Cancelar" icon="pi pi-times" iconPos="right" class="p-button-info mb-2"></button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.createTec{margin: 25px 0;}
+a{text-decoration: none;}
+:host .container{
+    display:  flex;
+    justify-content: center;
+}
+:host .card{
+    box-shadow: 15px 15px rgba(0, 0, 0, 0.2);
+}

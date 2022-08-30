@@ -1,0 +1,9 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;800;900&display=swap');
+ 
+ .nav{display: flex; flex-direction: column;}
+
+.nav a {text-decoration: none; margin: 20px 5px; color: #000;
+font-size: 18px; font-family: 'Poppins', sans-serif; }
+:host .btn-sidebar{
+    margin: 20px 50px;
+}

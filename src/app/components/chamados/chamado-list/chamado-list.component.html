@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+<div class="container">
+    <div class="card">
+        <div class="createTec">
+            <button routerLink="create" pButton class="p-button-success" icon="pi pi-plus  " label="Novo Chamado" iconPos="right"></button>
+        </div>
+        <h5>Lista de chamados</h5>
+        <p-table [globalFilterFields]="['id', 'titulo', 'cliente', 'dataAbertura', 'prioridade', 'status']" #filtro [value]="listChamados"
+            [paginator]="true" [rows]="5" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Mostrando {first} de {last} para {totalRecords} registros"
+            [rowsPerPageOptions]="[5,10,25]">
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <tr>
+                        <th>
+                            <p-columnFilter type="text" field="id"></p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter type="text" field="titulo"></p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter type="text" field="cliente"></p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter type="text" field="dataAbertura"></p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter type="text" field="prioridade"></p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter type="text" field="status"></p-columnFilter>
+                        </th>
+                    </tr>
+                </div>
+            </ng-template>
+            
+
+            <ng-template pTemplate="header" class="flex" style="width: 75%;">
+                
+                <tr>
+                    <th>ID</th>
+                    <th>TITULO</th>
+                    <th>CLIENTE</th>
+                    <th>DATA DE ABERTURA</th>
+                    <th>PRIORIDADE</th>
+                    <th>STATUS</th>
+                    <th>AÇÕES</th>
+                </tr>
+              
+            </ng-template>
+            <ng-template pTemplate="body" let-listChamados>
+                <tr>
+                    <td>{{listChamados.id}}</td>
+                    <td>{{listChamados.titulo}}</td>
+                    <td>{{listChamados.cliente}}</td>
+                    <td>{{listChamados.dataAbertura}}</td>
+                    <td>{{retornaPrioridade(listChamados.prioridade)}}</td>
+                    <td>{{retornaStatus(listChamados.status)}}</td>
+                    <td>
+                        <a  pButton type="button" icon="pi pi-pencil" class="p-button-warning mr-2" iconPos="left" routerLink="update/{{listChamados.id}}"></a>
+                        <a pButton type="button" class="p-button-info" icon="pi pi-eye" iconPos="left" routerLink="read/{{listChamados.id}}"></a>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

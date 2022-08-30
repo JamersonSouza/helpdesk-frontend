@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="cadastro">
+        <div class="form-cadastro">
+            <div class="img-cadastro">
+                <img src="../../../../assets/abertura-chamado.jpg" width="200px" alt="">
+            </div>
+            <form>
+                <div class="section">
+                    <div class="control-group">
+                        <span class="p-input-icon-right">
+                            <i class="pi pi-envelope"></i>
+                            <input type="text" pTooltip="Título do Chamado" class="tituloChamado" [(ngModel)]="chamado.titulo" [formControl]="titulo" pInputText name="titulo"
+                                placeholder="Título do Chamado" />
+                        </span>
+                    </div>
+                </div>
+                <div class="section mt-3">
+                    <div class="control-group">
+
+                        <!-- <p-dropdown class="mr-1" [style]="{'width': '250px'}" [formControl]="statusChamado" [options]="chamados" optionLabel="status"
+                                placeholder="Selecione um Status">
+                            </p-dropdown> -->
+
+                        <span class="p-input-icon-left">      
+                            <i class="pi pi-angle-right"></i>
+                        <select pTooltip="Selecione o Status" name="status" [(ngModel)]="chamado.status"  class="mr-2" pInputText [style]="{'width': '245px'}" [formControl]="statusChamado">
+                                <option value="0" >ABERTO</option>
+                                <option value="1">EM ANDAMENTO</option>
+                                <option value="2">FECHADO</option>
+                            </select>
+                        </span>
+                            <!-- <p-dropdown  [style]="{'width': '250px'}" [options]="chamados" [formControl]="prioridadeChamado" optionLabel="prioridade"
+                                placeholder="Selecione uma Prioridade">
+                            </p-dropdown> -->
+                            <span class="p-input-icon-left">      
+                                <i class="pi pi-angle-right"></i>
+                            <select pInputText pTooltip="Selecione a Prioridade" [(ngModel)]="chamado.prioridade" name="prioridade" [style]="{'width': '245px'}" [formControl]="prioridadeChamado">
+                                <option value="0">BAIXA</option>
+                                <option value="1">MÉDIA</option>
+                                <option value="2">ALTA</option>
+                            </select>
+                            </span>
+
+                    </div>
+                </div>
+
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <p-dropdown [options]="tecnicos" value="tecnico.id" [style]="{'width': '500px'}" optionValue="id" [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnico"
+                            optionLabel="nome" placeholder="Selecione um Técnico">
+                        </p-dropdown>
+                    </div>
+                </div>
+
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <p-dropdown [options]="clientes" [style]="{'width': '500px'}" optionValue="id" [(ngModel)]="chamado.cliente" name="cliente" [formControl]="cliente"
+                            optionLabel="nome" placeholder="Selecione um Cliente">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="section mt-3">
+                    <div class="control-group">
+                        <textarea [style]="{'width': '500px'}" pTooltip="Observações para o chamado"  [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoes" pInputTextarea></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="btn">
+                <button (click)="update()" [disabled]="!validaCampos()" pButton pRipple icon="pi pi-plus" iconPos="right"
+                    label="Atualizar Chamado" class="p-button-success mb-2"></button>
+                <br>
+                <button routerLink="../../" pButton pRipple label="Cancelar" icon="pi pi-times" iconPos="right"
+                    class="p-button-danger mb-2"></button>
+            </div>
+        </div>
+    </div>
+</div>

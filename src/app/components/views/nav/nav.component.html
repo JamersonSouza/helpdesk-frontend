@@ -1,0 +1,42 @@
+
+<p-toast></p-toast>
+<p-sidebar [(visible)]="visualizarSideBar" class="sidebar" [baseZIndex]="10000">
+    
+    <img src="../../../../assets/logo.png" width="250px" alt="">
+    <div class="nav">
+        <a routerLink="/home">
+            <i class="pi pi-home"></i>
+            Home
+        </a>
+        <a routerLink="tecnicos">
+            <i class="pi pi-user"></i>
+            Técnicos
+        </a>
+        <a routerLink="clientes">
+            <i class="pi pi-users"></i>
+            Clientes
+        </a>
+        <a routerLink="chamados">
+            <i class="pi pi-inbox"></i>
+            Chamados
+        </a>
+        <a routerLink="/">
+            <i class="pi pi-github"></i>
+            Github
+        </a>
+        <button pButton class="p-button-danger" type="button" (click)="logout()">
+            <i class="pi pi-sign-out"></i>
+            Logout
+        </button>
+    </div>
+
+</p-sidebar>
+<app-header></app-header>
+<p-button pButton pRipple class="p-button-rounded btn-sidebar" type="button" icon="pi pi-bars" (click)="visualizarSideBar = true" routerLink="/home"></p-button>
+
+<router-outlet></router-outlet>
+
+<!-- <span class="p-float-label">
+    <input id="float-input" type="text" class="p-inputtext-sm" pInputText> 
+    <label for="float-input">Username</label>
+</span> -->

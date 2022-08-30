@@ -1,0 +1,16 @@
+:host  .img-card{
+    width: 150px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+:host .container{
+    display:  flex;
+    justify-content: center;
+}
+:host .card{
+    box-shadow: 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+
