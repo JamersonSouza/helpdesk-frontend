@@ -13,6 +13,7 @@
                             <i class="pi pi-user"></i>
                             <input type="email" [formControl]="email" required pInputText name="email"
                                 required="required" placeholder="john.doe@exemple.com"
+                                pTooltip="Usuário Teste: linus@mail.com" tooltipPosition="top"
                                 [(ngModel)]="credenciais.email" />
                         </span>
                     </div>
@@ -20,6 +21,7 @@
                         <span class="p-input-icon-right">
                             <i class="pi pi-lock"></i>
                             <input type="password" name="senha" pInputText placeholder="password"
+                                pTooltip="Senha Teste: 123" tooltipPosition="top"
                                 [(ngModel)]="credenciais.senha" required [formControl]="senha" />
                         </span>
                     </div>
